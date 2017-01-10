@@ -1,0 +1,10 @@
+applications:
+- name: Angular-Zuul-app
+  memory: 512M
+  instances: 1
+  host: angular-zuul-app
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: target/angular-zuul-app.jar
+  env:
+    REGISTRY_SERVER_URL: pkmst-registry.apps.prokarma.com
+    ASYNC_UICONTROLLER_URL:

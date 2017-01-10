@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: gateway
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    poc-backend:
+        path: /poc-backend/**
+        url: http://${ASYNC_UICONTROLLER_URL}
+        
+    
+    poc-backend-ws:
+        path: /poc-backend/ws/**
+        url: http://${ASYNC_UICONTROLLER_URL}/ws
+        
+    poc-backend-auth-validData:
+        path: /poc-backend/auth/validData
+        url: http://${ASYNC_UICONTROLLER_URL}/auth/validData
+    
+    
